@@ -6,7 +6,7 @@ function makeTOC(content) {
   let tocHeaders = content.match(headerPattern);
   let toc = tocHeaders.map( h => {
     let level = 0;
-    while(h[level] === '#') level += 1;
+    while(h[++level] === '#');
     let guts = h.substring(level).trim();
     let link = guts
     .toLowerCase()
@@ -16,7 +16,7 @@ function makeTOC(content) {
     .replace(/\)/g, '')
     .replace(/\*/g, '')
     .replace(/_/g, '');
-    let indent = '  '.repeat(level-2);
+    let indent = '  '.repeat(level-2);  // indent nested toc lines
     return indent + '* [' + guts + '](#' + link + ')';
   });
 
