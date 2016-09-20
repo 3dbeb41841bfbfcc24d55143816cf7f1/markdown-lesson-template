@@ -1,9 +1,3 @@
-[//]: # (NOTE: This readme file was generated from the template.md file. You should *not* edit this file directly.)
-
-[comment]: <> (This is a comment, it will not be included)
-[comment]: <> (in  the output file unless you use it in)
-[comment]: <> (a reference style link.)
-
 ---
 title: Sample Lesson
 type: lesson
@@ -12,6 +6,12 @@ creator:
     name: Dr. Mike Hopper/ATL
 competencies: Client, Server, Database, Testing
 ---
+
+[//]: # (NOTE: This readme file was generated from the template.md file. You should *not* edit this file directly.)
+
+[comment]: <> (This is a comment, it will not be included)
+[comment]: <> (in  the output file unless you use it in)
+[comment]: <> (a reference style link.)
 
 # Sample Lesson
 
