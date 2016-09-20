@@ -65,6 +65,11 @@ More random text.
 
 ## Summary
 
+<details>
+  <summary><strong>How are we feeling?</strong></summary>
+  > Feeling great, thanks for asking!
+</details>
+
 Summary goes here.
 
 ## For Further Study
