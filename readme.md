@@ -1,4 +1,4 @@
----
+[//]: # (NOTE: This readme file was generated from the template.md file. You should *not* edit this file directly.)---
 title: Sample Lesson
 type: lesson
 duration: "1:30"
