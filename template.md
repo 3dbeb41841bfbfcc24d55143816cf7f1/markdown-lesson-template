@@ -29,32 +29,38 @@ This is just a sample lesson demonstrating the use of a template to generate the
 
 ## Topic 1
 
-Here is some sample code:
+Here is the source code for `src/greeting.js`:
 
 ```javascript
-{{ js/file1.js }}
+{{ src/greeting.js }}
 ```
 
 And the output is:
 
 ```
-{{ exec(node, js/file1.js) }}
+{{ exec(node, src/greeting.js) }}
 ```
 
 ## Topic 2
 
-Here is some sample code:
+Here is the source code for `src/express-app.js`:
 
 ```javascript
-{{ js/file2.js }}
+{{ src/express-app.js }}
 ```
 
 ## Topic 3
 
-Here is some sample code:
+Here is the source code for `src/pet.rb`:
 
-```javascript
-{{ file3.js }}
+```ruby
+{{ src/pet.rb}}
+```
+
+And the output is:
+
+```
+{{ exec(ruby, src/pet.rb) }}
 ```
 
 ### A Level 3 Heading

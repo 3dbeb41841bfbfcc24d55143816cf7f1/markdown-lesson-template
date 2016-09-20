@@ -41,7 +41,7 @@ This is just a sample lesson demonstrating the use of a template to generate the
 
 ## Topic 1
 
-Here is some sample code:
+Here is the source code for `src/greeting.js`:
 
 ```javascript
 function delayedGreeting(message, waitTime) {
@@ -66,7 +66,7 @@ callbacks are fun
 
 ## Topic 2
 
-Here is some sample code:
+Here is the source code for `src/express-app.js`:
 
 ```javascript
 var express = require('express');
@@ -96,18 +96,33 @@ console.log('App listening on port ' + port);
 
 ## Topic 3
 
-Here is some sample code:
+Here is the source code for `src/pet.rb`:
 
-```javascript
-angular.module('myApp')
-.component('myComponent', {
-  template: `
-    <h1>Hello {{ $ctrl.name }}</h1>
-  `,
-  controller: function myComponentCtrl() {
-    this.name = 'Mike';
-  }
-});
+```ruby
+class Pet
+  def initialize(name, type)
+    @name = name
+    @type = type
+  end
+
+  def to_s
+    "#{@name} is a #{@type}"
+  end
+end
+
+pets = [
+  Pet.new('Snoopy', 'Dog'),
+  Pet.new('Felix', 'Cat')
+]
+
+pets.each { |pet| puts pet }
+```
+
+And the output is:
+
+```
+Snoopy is a Dog
+Felix is a Cat
 ```
 
 ### A Level 3 Heading
