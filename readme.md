@@ -18,7 +18,7 @@ competencies: Testing
 * [Topic 2](#topic-2)
 * [Topic 3](#topic-3)
   * [A Level 3 Heading](#a-level-3-heading)
-  * [A Level 3 Heading, *With* A __FUNKY__ (Name)](#a-level-3-heading-*with*-a-__funky__-name)
+  * [A Level 3 Heading, *With* A __FUNKY__ (Name)](#a-level-3-heading-with-a-funky-name)
 * [Summary](#summary)
 * [For Further Study](#for-further-study)
 
