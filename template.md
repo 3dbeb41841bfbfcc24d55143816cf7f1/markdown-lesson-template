@@ -38,7 +38,7 @@ Here is some sample code:
 And the output is:
 
 ```
-{{ js/file1.out }}
+{{ exec(node, js/file1.js) }}
 ```
 
 ## Topic 2

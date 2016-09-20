@@ -27,6 +27,20 @@ function makeTOC(content) {
   return toc.join('\n');
 }
 
+function generateOutput(command, args) {
+  const execFileSync = require('child_process').execFileSync;
+  console.log('Executing:', command, args);
+  try {
+    return execFileSync(command, args, { encoding: 'utf-8' }).replace(/[\r\n]*$/, "");
+  }
+  catch (err) {
+    console.error(err.stack)
+    if (err.pid) {
+      console.log('%s (pid: %d) exited with status %d', err.file, err.pid, err.status);
+    }
+  }
+}
+
 /** Process the template, searching for double curly braces (i.e. {{embeddedExpression}} )
   *  - {{TOC}}              - will cause a Table of Contents to be generated and inserted into the placeholder
   *  - {{embeddedFileName}} - will cause the file contents to be inserted into the placeholder
@@ -42,9 +56,18 @@ function processTemplate(template, baseDir) {
       console.log('inserting TOC');
       return makeTOC(template);
     }
+    else if (embeddedExpression.startsWith('exec(')) {
+      let args = embeddedExpression.substring(5).replace(/\)/g, '').split(',');
+      args = args.map( arg => arg.trim() );
+      let command = args.shift();
+      console.log('args:', args);
+      let output = generateOutput(command, args);
+      console.log(`transcluding output of '%s'`, embeddedExpression);
+      return output;
+    }
     else {
       console.log(`transcluding '%s'`, embeddedExpression);
-      return fs.readFileSync(path.join(baseDir, embeddedExpression), "utf-8").replace(/[\r\n]*$/, "");
+      return fs.readFileSync(path.join(baseDir, embeddedExpression), 'utf-8').replace(/[\r\n]*$/, "");
     }
   });
 }

@@ -50,8 +50,8 @@ function delayedGreeting(message, waitTime) {
   }, waitTime);
 }
 
-delayedGreeting('callbacks are fun', 2000);
-delayedGreeting('closures rock', 1000);
+delayedGreeting('callbacks are fun', 1000);
+delayedGreeting('closures rock', 500);
 
 console.log('Goodbye');
 ```
