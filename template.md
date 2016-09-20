@@ -59,6 +59,14 @@ Here is some sample code:
 
 Just some random text.
 
+## Task Lists
+
+Here is a task list
+
+- [x] Finish my changes
+- [ ] Push my commits to GitHub
+- [ ] Open a pull request
+
 ### A Level 3 Heading, *With* A __FUNKY__ (Name)
 
 More random text.

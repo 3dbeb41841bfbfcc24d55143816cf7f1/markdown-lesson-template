@@ -18,6 +18,7 @@ competencies: Client, Server, Database, Testing
 * [Topic 2](#topic-2)
 * [Topic 3](#topic-3)
   * [A Level 3 Heading](#a-level-3-heading)
+* [Task Lists](#task-lists)
   * [A Level 3 Heading, *With* A __FUNKY__ (Name)](#a-level-3-heading-with-a-funky-name)
 * [Summary](#summary)
 * [For Further Study](#for-further-study)
@@ -110,6 +111,14 @@ angular.module('myApp')
 ### A Level 3 Heading
 
 Just some random text.
+
+## Task Lists
+
+Here is a task list
+
+- [x] Finish my changes
+- [ ] Push my commits to GitHub
+- [ ] Open a pull request
 
 ### A Level 3 Heading, *With* A __FUNKY__ (Name)
 
