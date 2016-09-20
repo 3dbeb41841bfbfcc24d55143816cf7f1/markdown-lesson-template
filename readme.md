@@ -122,8 +122,6 @@ More random text.
   > Feeling great, thanks for asking!
 </details>
 
-Summary goes here.
-
 ## For Further Study
 
 * Reference 1
