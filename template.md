@@ -9,6 +9,8 @@ competencies: Client, Server, Database, Testing
 
 # Sample Lesson
 
+This is just a sample lesson demonstrating the use of a template to generate the `readme.md`.
+
 {{TOC}}
 
 ## Objectives
