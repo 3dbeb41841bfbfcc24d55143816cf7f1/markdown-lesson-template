@@ -4,7 +4,7 @@ type: lesson
 duration: "1:30"
 creator:
     name: Dr. Mike Hopper/ATL
-competencies: Testing
+competencies: Client, Server, Database, Testing
 ---
 
 # Sample Lesson
