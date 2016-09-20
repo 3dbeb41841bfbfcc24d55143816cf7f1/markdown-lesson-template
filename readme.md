@@ -7,8 +7,6 @@ creator:
 competencies: Client, Server, Database, Testing
 ---
 
-[//]: # (NOTE: This readme file was generated from the template.md file. You should *not* edit this file directly.)
-
 # Sample Lesson
 
 This is just a sample lesson demonstrating the use of a template to generate the `readme.md`.

@@ -80,6 +80,4 @@ console.log(`Processing '${inputFile}' ==> '${outputFile}'.`);
 let cwd = process.cwd();
 let template = fs.readFileSync(require("path").join(cwd, inputFile), "utf-8");
 let readme = processTemplate(template, cwd);
-let comment = `[//]: # (NOTE: This readme file was generated from the template.md file. You should *not* edit this file directly.)`
-readme = comment + readme;
 fs.writeFile(outputFile, readme, "utf-8", function() { console.log('=== All done! ==='); });
