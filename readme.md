@@ -13,7 +13,7 @@ file using the 'md-process' script.
 Therefore *DO NOT* edit this file directly!
 Instead edit 'template.md' and then run 'md-process'.
 -->
-  
+
 # Sample Lesson
 
 This is just a sample lesson demonstrating the use of a template to generate the `readme.md`.
