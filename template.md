@@ -39,6 +39,13 @@ Here is the output of running `ls -als`:
 {{ exec(ls, -als)}}
 ```
 
+Here is the output of running `echo apple orange banana`:
+
+```
+{{ exec(echo, apple orange banana)}}
+```
+
+
 ## JavaScript Jams!
 
 Here is the source code for `src/greeting.js`:

@@ -58,14 +58,21 @@ Here is the output of running `ls -als`:
 total 24
  0 drwxr-xr-x@   9 drmikeh  staff   306 Sep 21 12:35 .
  0 drwxr-xr-x@ 132 drmikeh  staff  4488 Sep 20 13:13 ..
- 0 drwxr-xr-x@  12 drmikeh  staff   408 Sep 21 12:53 .git
- 4 -rw-r--r--@   1 drmikeh  staff  1075 Sep 21 12:39 about-templates.md
- 8 -rwxr--r--@   1 drmikeh  staff  5107 Sep 21 12:37 md-process
- 4 -rw-r--r--@   1 drmikeh  staff  2997 Sep 21 12:41 readme.md
+ 0 drwxr-xr-x@  12 drmikeh  staff   408 Sep 21 13:11 .git
+ 4 -rw-r--r--@   1 drmikeh  staff  1070 Sep 21 12:57 about-templates.md
+ 8 -rwxr--r--@   1 drmikeh  staff  5107 Sep 21 13:08 md-process
+ 4 -rw-r--r--@   1 drmikeh  staff  3840 Sep 21 13:11 readme.md
  0 drwxr-xr-x@   6 drmikeh  staff   204 Sep 20 15:37 src
- 4 -rw-r--r--@   1 drmikeh  staff  1527 Sep 21 12:53 template.md
+ 4 -rw-r--r--@   1 drmikeh  staff  1633 Sep 21 13:11 template.md
  4 -rw-r--r--@   1 drmikeh  staff    93 Sep 20 14:31 todos.md
 ```
+
+Here is the output of running `echo apple orange banana`:
+
+```
+apple orange banana
+```
+
 
 ## JavaScript Jams!
 
