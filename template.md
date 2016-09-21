@@ -51,7 +51,7 @@ And the output is:
   <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
 
 ```javascript
-{{ src/greeting.js }}
+{{ src/express-app.js }}
 ```
 </details>
 

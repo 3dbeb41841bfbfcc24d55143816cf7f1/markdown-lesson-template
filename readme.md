@@ -80,16 +80,29 @@ callbacks are fun
   <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
 
 ```javascript
-function delayedGreeting(message, waitTime) {
-  setTimeout(function() {
-    console.log(message);
-  }, waitTime);
-}
+var express = require('express');
+var app = express();
+var morgan = require("morgan");
 
-delayedGreeting('callbacks are fun', 1000);
-delayedGreeting('closures rock', 500);
+// Middleware
+app.use(morgan('combined'));
 
-console.log('Goodbye');
+app.use(function(request, response, next) {
+  console.log('Custom Middleware: %s request to %s from %s',
+              request.method, request.path, request.ip);
+  next();
+});
+
+// Routes
+app.get('/', function(request, response) {
+  // res.render('index');
+  response.send('Hello from Express!');
+});
+
+// Start up the Express Engine
+var port = 3000;
+var server = app.listen(port);
+console.log('App listening on port ' + port);
 ```
 </details>
 
