@@ -9,7 +9,7 @@ competencies: javascript, ruby
 
 # Sample Lesson
 
-This is just a sample lesson demonstrating the use of a template to generate the `readme.md`.
+This is just a sample lesson demonstrating the use of a template to generate this `readme.md`.
 
 {{TOC}}
 
