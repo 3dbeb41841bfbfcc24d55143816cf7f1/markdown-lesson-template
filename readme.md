@@ -12,6 +12,13 @@ This is a comment which is
 completely ignored.
 {:/comment}
 
+This is a para.
+<!-- a *comment* -->
+<? a processing `instruction`
+   spanning multiple lines
+?> First part of para,
+continues here.
+
 # Sample Lesson
 
 This is just a sample lesson demonstrating the use of a template to generate the `readme.md`.
