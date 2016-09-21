@@ -1,0 +1,133 @@
+#!/usr/bin/env node
+
+let fs = require("fs");
+let path = require("path");
+
+class TemplateProcessor {
+  constructor(template, baseDir) {
+    this.template = template;
+    this.baseDir = baseDir;
+  }
+
+  // The entry point
+  process() {
+    let content = this.insertComment(this.template);
+    return this.doTransclusions(content);
+  }
+
+  // THE REST OF THIS CLASS IS IMPLEMENTATION CODE
+
+  /** Create a Table of Contents. A TOC entry will be generated
+    * for each header of level 2 or greater (lines starting with '##')
+   **/
+  makeTOC(content) {
+    let headerPattern = /##.*/g  // include headers at level 2 and up
+    let tocHeaders = content.match(headerPattern);
+    let toc = tocHeaders.map( h => {
+      let level = 0;
+      while(h[++level] === '#');
+      let guts = h.substring(level).trim();
+      let link = guts
+      .toLowerCase()
+      .replace(/\s/g, '-')
+      .replace(/,|_|!|\*|\(|\)/g, '');
+      let indent = '  '.repeat(level-2);  // indent nested toc lines
+      return indent + '* [' + guts + '](#' + link + ')';
+    });
+
+    toc.unshift('## Table of Contents\n');
+    return toc.join('\n');
+  }
+
+  generateOutputFromCommand(command, args) {
+    const execFileSync = require('child_process').execFileSync;
+    console.log(`Executing: '${command} ${args.join(' ')}'`);
+    try {
+      return execFileSync(command, args, { encoding: 'utf-8' }).replace(/[\r\n]*$/, "");
+    }
+    catch (err) {
+      console.error(err.stack)
+      if (err.pid) {
+        console.log('%s (pid: %d) exited with status %d', err.file, err.pid, err.status);
+      }
+    }
+  }
+
+  /** Process the template, searching for double curly braces (i.e. {{embeddedExpression}} )
+    *  - {{TOC}}              - will cause a Table of Contents to be generated and inserted into the placeholder
+    *  - {{embeddedFileName}} - will cause the file contents to be inserted into the placeholder
+   **/
+  doTransclusions(content) {
+    // regex for capturing {{path/file.js}}
+    let regex = new RegExp("\\{\\{([^:\\}]+)\\}\\}", "g");
+
+    return content
+    .replace(regex, embeddedExpression => {
+      embeddedExpression = embeddedExpression.substr(2, embeddedExpression.length - 4).trim();
+      if (embeddedExpression === 'TOC') {
+        console.log('inserting TOC');
+        return this.makeTOC(content);
+      }
+      else if (embeddedExpression.startsWith('exec(')) {
+        let args = embeddedExpression.substring(5).replace(/\)/g, '').split(',');
+        args = args.map( arg => arg.trim() );
+        let command = args.shift();
+        let output = this.generateOutputFromCommand(command, args);
+        console.log(`  Transcluding output of '%s'`, embeddedExpression);
+        return output;
+      }
+      else {
+        console.log(`Transcluding '%s'`, embeddedExpression);
+        return fs.readFileSync(path.join(this.baseDir, embeddedExpression), 'utf-8').replace(/[\r\n]*$/, "");
+      }
+    });
+  }
+
+  insertComment(content) {
+    let regex = /\# .*/;
+    let comment = `<!--
+This file is auto-generated from a 'template.md'
+file using the 'md-process' script.
+Therefore *DO NOT* edit this file directly!
+Instead edit 'template.md' and then run 'md-process'.
+-->
+  `
+    return content.replace(regex, function(topHeader) {
+      console.log('Inserting comment before topHeader:', topHeader);
+      return comment + '\n' + topHeader;
+    });
+  }
+}
+
+function safeAssign(options, key, value) {
+  console.log('safeAssign:', options, key, value);
+  if (value) {
+    options[key] = value;
+  }
+}
+
+function getCommandLineOrDefaultOptions() {
+  let options = {
+    inputFile: 'template.md',
+    outputFile: 'readme.md'
+  };
+  let clArgs = process.argv;
+  for (let index = 2; index < clArgs.length; index++) {
+    let val = clArgs[index];
+    switch(val) {
+      case '-i': safeAssign(options, 'inputFile',  clArgs[++index]); break;
+      case '-o': safeAssign(options, 'outputFile', clArgs[++index]); break;
+      default:
+        console.log('Option %s not recognized.', val);
+        break;
+    }
+  }
+  return options;
+}
+
+let options = getCommandLineOrDefaultOptions();
+console.log(`Processing '${options.inputFile}' ==> '${options.outputFile}'.`);
+let cwd = process.cwd();
+let template = fs.readFileSync(require("path").join(cwd, options.inputFile), "utf-8");
+let output = new TemplateProcessor(template, cwd).process();
+fs.writeFile(options.outputFile, output, "utf-8", function() { console.log('=== All done! ==='); });
