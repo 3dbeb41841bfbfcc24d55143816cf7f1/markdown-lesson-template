@@ -14,11 +14,7 @@ function makeTOC(content) {
     let link = guts
     .toLowerCase()
     .replace(/\s/g, '-')
-    .replace(/,/g, '')
-    .replace(/\(/g, '')
-    .replace(/\)/g, '')
-    .replace(/\*/g, '')
-    .replace(/_/g, '');
+    .replace(/,|_|!|\*|\(|\)/g, '');
     let indent = '  '.repeat(level-2);  // indent nested toc lines
     return indent + '* [' + guts + '](#' + link + ')';
   });
@@ -80,4 +76,10 @@ console.log(`Processing '${inputFile}' ==> '${outputFile}'.`);
 let cwd = process.cwd();
 let template = fs.readFileSync(require("path").join(cwd, inputFile), "utf-8");
 let readme = processTemplate(template, cwd);
+let comment = `
+{::comment}
+This is a comment which is
+completely ignored.
+{:/comment}`
+readme = comment + readme;
 fs.writeFile(outputFile, readme, "utf-8", function() { console.log('=== All done! ==='); });

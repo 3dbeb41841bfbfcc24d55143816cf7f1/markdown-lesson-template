@@ -1,4 +1,8 @@
----
+
+{::comment}
+This is a comment which is
+completely ignored.
+{:/comment}---
 title: Sample Lesson
 type: lesson
 duration: "1:30"
@@ -16,9 +20,9 @@ This is just a sample lesson demonstrating the use of a template to generate the
 * [Objectives](#objectives)
 * [Preparation](#preparation)
 * [Introduction](#introduction)
-* [JavaScript Jams!](#javascript-jams!)
-* [Ruby Rocks!](#ruby-rocks!)
-  * [JavaScript Does Server Too!](#javascript-does-server-too!)
+* [JavaScript Jams!](#javascript-jams)
+* [Ruby Rocks!](#ruby-rocks)
+  * [JavaScript Does Server Too!](#javascript-does-server-too)
 * [Markdown Has Task Lists](#markdown-has-task-lists)
   * [A Level 3 Heading, *With* A __FUNKY__ (Name)](#a-level-3-heading-with-a-funky-name)
 * [Summary](#summary)
