@@ -14,7 +14,7 @@ You can view the incuded `template.md` for a working example and generate the re
 
 `md-process` supports the following command-line options:
 
-* -i input-file-name    # specify the name of the input file (the template)
-* -o output-file-name   # specify the name of the output file
+    -i <input-file-name>    # specify the name of the input file (the template)
+    -o <output-file-name>   # specify the name of the output file
 
 For example: `md-process -i my-template.md -o README.md`
