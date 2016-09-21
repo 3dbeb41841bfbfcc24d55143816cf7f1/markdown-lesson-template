@@ -4,7 +4,7 @@ type: lesson
 duration: "1:30"
 creator:
     name: Dr. Mike Hopper/ATL
-competencies: Client, Server, Database, Testing
+competencies: javascript, ruby
 ---
 
 # Sample Lesson
@@ -16,11 +16,10 @@ This is just a sample lesson demonstrating the use of a template to generate the
 * [Objectives](#objectives)
 * [Preparation](#preparation)
 * [Introduction](#introduction)
-* [Topic 1](#topic-1)
-* [Topic 2](#topic-2)
-* [Topic 3](#topic-3)
-  * [A Level 3 Heading](#a-level-3-heading)
-* [Task Lists](#task-lists)
+* [JavaScript Jams!](#javascript-jams!)
+* [Ruby Rocks!](#ruby-rocks!)
+  * [JavaScript Does Server Too!](#javascript-does-server-too!)
+* [Markdown Has Task Lists](#markdown-has-task-lists)
   * [A Level 3 Heading, *With* A __FUNKY__ (Name)](#a-level-3-heading-with-a-funky-name)
 * [Summary](#summary)
 * [For Further Study](#for-further-study)
@@ -39,7 +38,7 @@ This is just a sample lesson demonstrating the use of a template to generate the
 
 ## Introduction
 
-## Topic 1
+## JavaScript Jams!
 
 Here is the source code for `src/greeting.js`:
 
@@ -64,37 +63,7 @@ closures rock
 callbacks are fun
 ```
 
-## Topic 2
-
-Here is the source code for `src/express-app.js`:
-
-```javascript
-var express = require('express');
-var app = express();
-var morgan = require("morgan");
-
-// Middleware
-app.use(morgan('combined'));
-
-app.use(function(request, response, next) {
-  console.log('Custom Middleware: %s request to %s from %s',
-              request.method, request.path, request.ip);
-  next();
-});
-
-// Routes
-app.get('/', function(request, response) {
-  // res.render('index');
-  response.send('Hello from Express!');
-});
-
-// Start up the Express Engine
-var port = 3000;
-var server = app.listen(port);
-console.log('App listening on port ' + port);
-```
-
-## Topic 3
+## Ruby Rocks!
 
 Here is the source code for `src/pet.rb`:
 
@@ -125,11 +94,27 @@ Snoopy is a Dog
 Felix is a Cat
 ```
 
-### A Level 3 Heading
+### JavaScript Does Server Too!
 
-Just some random text.
+<details>
+  <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
 
-## Task Lists
+```javascript
+function delayedGreeting(message, waitTime) {
+  setTimeout(function() {
+    console.log(message);
+  }, waitTime);
+}
+
+delayedGreeting('callbacks are fun', 1000);
+delayedGreeting('closures rock', 500);
+
+console.log('Goodbye');
+```
+
+</details>
+
+## Markdown Has Task Lists
 
 Here is a task list
 
@@ -139,7 +124,7 @@ Here is a task list
 
 ### A Level 3 Heading, *With* A __FUNKY__ (Name)
 
-More random text.
+Some random text.
 
 ## Summary
 

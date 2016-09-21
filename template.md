@@ -4,7 +4,7 @@ type: lesson
 duration: "1:30"
 creator:
     name: Dr. Mike Hopper/ATL
-competencies: Client, Server, Database, Testing
+competencies: javascript, ruby
 ---
 
 # Sample Lesson
@@ -27,7 +27,7 @@ This is just a sample lesson demonstrating the use of a template to generate the
 
 ## Introduction
 
-## Topic 1
+## JavaScript Jams!
 
 Here is the source code for `src/greeting.js`:
 
@@ -41,15 +41,7 @@ And the output is:
 {{ exec(node, src/greeting.js) }}
 ```
 
-## Topic 2
-
-Here is the source code for `src/express-app.js`:
-
-```javascript
-{{ src/express-app.js }}
-```
-
-## Topic 3
+## Ruby Rocks!
 
 Here is the source code for `src/pet.rb`:
 
@@ -63,11 +55,18 @@ And the output is:
 {{ exec(ruby, src/pet.rb) }}
 ```
 
-### A Level 3 Heading
+### JavaScript Does Server Too!
 
-Just some random text.
+<details>
+  <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
 
-## Task Lists
+```javascript
+{{ src/greeting.js }}
+```
+
+</details>
+
+## Markdown Has Task Lists
 
 Here is a task list
 
@@ -77,7 +76,7 @@ Here is a task list
 
 ### A Level 3 Heading, *With* A __FUNKY__ (Name)
 
-More random text.
+Some random text.
 
 ## Summary
 
