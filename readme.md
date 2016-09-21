@@ -1,3 +1,5 @@
+<!-- a *comment* -->
+
 ---
 title: Sample Lesson
 type: lesson
@@ -14,10 +16,7 @@ completely ignored.
 
 This is a para.
 <!-- a *comment* -->
-<? a processing `instruction`
-   spanning multiple lines
-?> First part of para,
-continues here.
+
 
 # Sample Lesson
 
