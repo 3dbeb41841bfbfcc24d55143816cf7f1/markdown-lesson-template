@@ -4,6 +4,7 @@ The `md-process` script is an executable JavaScript script that reads the file `
 
 * Replace any occurrences of {{TOC}} with a table of contents (with hypertext links).
   - Note that the TOC is generated from all of the level 2 and above markdown headers (lines that begin with `##`).
+  - Level 3 and above headers are indented according to their level.
 * Replace any occurrences of {{path/to/file}} with the contents of that file.
 * Replace any occurrences of {{ exec(command, path/to/file) }} with the stdout captured from running
 the command.
