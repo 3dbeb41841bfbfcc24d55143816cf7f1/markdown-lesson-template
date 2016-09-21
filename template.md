@@ -31,6 +31,14 @@ Markdown is fun but what I really love is Markdown templates!
 
 ---
 
+## All Serious Developers use the Command Line
+
+Here is the output of running `ls -als`:
+
+```
+{{ exec(ls, -als)}}
+```
+
 ## JavaScript Jams!
 
 Here is the source code for `src/greeting.js`:
