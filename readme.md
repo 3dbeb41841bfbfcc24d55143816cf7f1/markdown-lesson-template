@@ -1,7 +1,3 @@
-{::comment}
-This is a comment which is
-completely ignored.
-{:/comment}
 ---
 title: Sample Lesson
 type: lesson
@@ -10,6 +6,11 @@ creator:
     name: Dr. Mike Hopper/ATL
 competencies: javascript, ruby
 ---
+
+{::comment}
+This is a comment which is
+completely ignored.
+{:/comment}
 
 # Sample Lesson
 
