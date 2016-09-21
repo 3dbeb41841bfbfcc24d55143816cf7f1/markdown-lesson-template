@@ -24,11 +24,12 @@ This is just a sample lesson demonstrating the use of a template to generate the
 * [Preparation](#preparation)
 * [Introduction](#introduction)
 * [JavaScript Jams!](#javascript-jams)
-* [Ruby Rocks!](#ruby-rocks)
   * [JavaScript Does Server Too!](#javascript-does-server-too)
+* [Ruby Rocks!](#ruby-rocks)
 * [Markdown Has Task Lists](#markdown-has-task-lists)
   * [A Level 3 Heading, *With* A __FUNKY__ (Name)](#a-level-3-heading-with-a-funky-name)
 * [Summary](#summary)
+* [For Further Study](#for-further-study)
 
 ## Objectives
 * Objective 1
@@ -43,6 +44,10 @@ This is just a sample lesson demonstrating the use of a template to generate the
 * Prereq 3
 
 ## Introduction
+
+Markdown is fun but what I really love is Markdown templates!
+
+---
 
 ## JavaScript Jams!
 
@@ -68,6 +73,27 @@ Goodbye
 closures rock
 callbacks are fun
 ```
+
+### JavaScript Does Server Too!
+
+<details>
+  <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
+
+```javascript
+function delayedGreeting(message, waitTime) {
+  setTimeout(function() {
+    console.log(message);
+  }, waitTime);
+}
+
+delayedGreeting('callbacks are fun', 1000);
+delayedGreeting('closures rock', 500);
+
+console.log('Goodbye');
+```
+</details>
+
+---
 
 ## Ruby Rocks!
 
@@ -100,25 +126,7 @@ Snoopy is a Dog
 Felix is a Cat
 ```
 
-### JavaScript Does Server Too!
-
-<details>
-  <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
-
-```javascript
-function delayedGreeting(message, waitTime) {
-  setTimeout(function() {
-    console.log(message);
-  }, waitTime);
-}
-
-delayedGreeting('callbacks are fun', 1000);
-delayedGreeting('closures rock', 500);
-
-console.log('Goodbye');
-```
-
-</details>
+---
 
 ## Markdown Has Task Lists
 
@@ -132,6 +140,8 @@ Here is a task list
 
 Some random text.
 
+---
+
 ## Summary
 
 <details>
@@ -139,7 +149,9 @@ Some random text.
   > Feeling great, thanks for asking!
 </details>
 
-# For Further Study
+---
+
+## For Further Study
 
 * Reference 1
 * Reference 2

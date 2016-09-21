@@ -27,6 +27,10 @@ This is just a sample lesson demonstrating the use of a template to generate the
 
 ## Introduction
 
+Markdown is fun but what I really love is Markdown templates!
+
+---
+
 ## JavaScript Jams!
 
 Here is the source code for `src/greeting.js`:
@@ -40,6 +44,18 @@ And the output is:
 ```
 {{ exec(node, src/greeting.js) }}
 ```
+
+### JavaScript Does Server Too!
+
+<details>
+  <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
+
+```javascript
+{{ src/greeting.js }}
+```
+</details>
+
+---
 
 ## Ruby Rocks!
 
@@ -55,16 +71,7 @@ And the output is:
 {{ exec(ruby, src/pet.rb) }}
 ```
 
-### JavaScript Does Server Too!
-
-<details>
-  <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
-
-```javascript
-{{ src/greeting.js }}
-```
-
-</details>
+---
 
 ## Markdown Has Task Lists
 
@@ -78,6 +85,8 @@ Here is a task list
 
 Some random text.
 
+---
+
 ## Summary
 
 <details>
@@ -85,7 +94,9 @@ Some random text.
   > Feeling great, thanks for asking!
 </details>
 
-# For Further Study
+---
+
+## For Further Study
 
 * Reference 1
 * Reference 2
