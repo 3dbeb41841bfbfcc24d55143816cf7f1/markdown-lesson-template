@@ -1,8 +1,8 @@
-
 {::comment}
 This is a comment which is
 completely ignored.
-{:/comment}---
+{:/comment}
+---
 title: Sample Lesson
 type: lesson
 duration: "1:30"
