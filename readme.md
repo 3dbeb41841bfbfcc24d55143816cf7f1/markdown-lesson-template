@@ -1,5 +1,3 @@
-<!-- a *comment* -->
-
 ---
 title: Sample Lesson
 type: lesson
@@ -9,14 +7,7 @@ creator:
 competencies: javascript, ruby
 ---
 
-{::comment}
-This is a comment which is
-completely ignored.
-{:/comment}
-
-This is a para.
 <!-- a *comment* -->
-
 
 # Sample Lesson
 
