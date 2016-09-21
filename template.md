@@ -85,7 +85,7 @@ Some random text.
   > Feeling great, thanks for asking!
 </details>
 
-## For Further Study
+# For Further Study
 
 * Reference 1
 * Reference 2

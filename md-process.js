@@ -41,7 +41,7 @@ function generateOutput(command, args) {
   *  - {{TOC}}              - will cause a Table of Contents to be generated and inserted into the placeholder
   *  - {{embeddedFileName}} - will cause the file contents to be inserted into the placeholder
  **/
-function processTemplate(template, baseDir) {
+function doTransclusions(template, baseDir) {
   // regex for capturing {{path/file.js}}
   let regex = new RegExp("\\{\\{([^:\\}]+)\\}\\}", "g");
 
@@ -68,6 +68,25 @@ function processTemplate(template, baseDir) {
   });
 }
 
+function insertComment(template) {
+  let regex = /\# .*/;
+  let comment = `<!--
+This file is auto-generated from the 'template.md'
+file using the 'md-process.js' script.
+Therefore *DO NOT* edit this file directly!
+-->
+`
+  return template.replace(regex, function(topHeader) {
+    console.log('Inserting comment before topHeader:', topHeader);
+    return comment + '\n' + topHeader;
+  });
+}
+
+function processTemplate(template, baseDir) {
+  template = insertComment(template);
+  return doTransclusions(template, baseDir);
+}
+
 let inputFile = 'template.md';
 let outputFile = 'readme.md';
 
@@ -76,10 +95,4 @@ console.log(`Processing '${inputFile}' ==> '${outputFile}'.`);
 let cwd = process.cwd();
 let template = fs.readFileSync(require("path").join(cwd, inputFile), "utf-8");
 let readme = processTemplate(template, cwd);
-let comment = `
-{::comment}
-This is a comment which is
-completely ignored.
-{:/comment}`
-readme = comment + readme;
 fs.writeFile(outputFile, readme, "utf-8", function() { console.log('=== All done! ==='); });

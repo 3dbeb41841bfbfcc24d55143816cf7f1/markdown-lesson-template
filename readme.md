@@ -7,7 +7,11 @@ creator:
 competencies: javascript, ruby
 ---
 
-<!-- a *comment* -->
+<!--
+This file is auto-generated from the 'template.md'
+file using the 'md-process.js' script.
+Therefore *DO NOT* edit this file directly!
+-->
 
 # Sample Lesson
 
@@ -24,7 +28,6 @@ This is just a sample lesson demonstrating the use of a template to generate the
 * [Markdown Has Task Lists](#markdown-has-task-lists)
   * [A Level 3 Heading, *With* A __FUNKY__ (Name)](#a-level-3-heading-with-a-funky-name)
 * [Summary](#summary)
-* [For Further Study](#for-further-study)
 
 ## Objectives
 * Objective 1
@@ -135,7 +138,7 @@ Some random text.
   > Feeling great, thanks for asking!
 </details>
 
-## For Further Study
+# For Further Study
 
 * Reference 1
 * Reference 2
