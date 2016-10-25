@@ -26,7 +26,7 @@ let TemplateProcessor = (function() {
         let link = guts
         .toLowerCase()
         .replace(/\s/g, '-')
-        .replace(/,|_|!|\/|\.|\*|\(|\)/g, '');
+        .replace(/,|_|!|\/|\`|\'|\.|\*|\(|\)/g, '');
         let indent = '  '.repeat(level-2);  // indent nested toc lines
         return indent + '* [' + guts + '](#' + link + ')';
       });
@@ -105,16 +105,20 @@ Instead edit 'template.md' and then run 'md-process'.
 
   // The public class
   class TemplateProcessor {
-    constructor(template, baseDir) {
-      this.template = template;
+    constructor(templateFile, outputFile, baseDir) {
+      this.templateFile = templateFile;
+      this.outputFile = outputFile;
       this.baseDir = baseDir;
     }
 
     process() {
-      return new TemplateProcessorImpl(this.template, this.baseDir)
+      console.log(`Processing '${this.templateFile}' ==> '${this.outputFile}'.`);
+      let templateContent = fs.readFileSync(this.templateFile, "utf-8");
+      let outputContent = new TemplateProcessorImpl(templateContent, this.baseDir)
       .insertComment()
       .doTransclusions()
       .content;
+      fs.writeFile(this.outputFile, outputContent, "utf-8", () => { console.log(`=== Generated ${this.outputFile}! ===`); });
     }
   }
 
@@ -147,11 +151,22 @@ class Options {
   }
 }
 
-let clArgs = process.argv;
-clArgs.splice(0, 2);
-let options = new Options(clArgs);
-console.log(`Processing '${options.inputFile}' ==> '${options.outputFile}'.`);
 let cwd = process.cwd();
-let template = fs.readFileSync(require("path").join(cwd, options.inputFile), "utf-8");
-let output = new TemplateProcessor(template, cwd).process();
-fs.writeFile(options.outputFile, output, "utf-8", function() { console.log('=== All done! ==='); });
+let clArgs = process.argv;
+console.log('clArgs:', clArgs);
+clArgs.splice(0, 2);
+console.log('clArgs:', clArgs);
+if (clArgs.length > 0) {
+  let options = new Options(clArgs);
+  new TemplateProcessor(options.inputFile, options.outputFile, cwd).process();
+}
+else {
+  console.log('no options found.');
+  let regex = new RegExp(".*-template.md");
+  let templateFiles = fs.readdirSync(cwd).filter(f => regex.test(f));
+  console.log('templateFiles:', templateFiles);
+  templateFiles.forEach( inputFile => {
+    let outputFile = inputFile.replace(/-template.md/, '.md');
+    new TemplateProcessor(inputFile, outputFile, cwd).process();
+  });
+}
