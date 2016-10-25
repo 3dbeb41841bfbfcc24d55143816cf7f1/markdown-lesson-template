@@ -11,7 +11,7 @@ competencies: javascript, ruby
 This file is auto-generated from a 'template.md'
 file using the 'md-process' script.
 Therefore *DO NOT* edit this file directly!
-Instead edit 'template.md' and then run 'md-process'.
+Instead edit the template file and then run 'md-process'.
 -->
 
 # Sample Lesson
@@ -58,11 +58,11 @@ Here is the output of running `ls -als`:
 total 28
  0 drwxr-xr-x@  11 drmikeh  staff   374 Oct 25 18:18 .
  0 drwxr-xr-x@ 133 drmikeh  staff  4522 Oct 24 13:07 ..
- 0 drwxr-xr-x@  12 drmikeh  staff   408 Oct 25 18:36 .git
+ 0 drwxr-xr-x@  12 drmikeh  staff   408 Oct 25 19:02 .git
  4 -rw-r--r--@   1 drmikeh  staff    16 Oct 25 18:12 abc-template.md
- 0 -rw-r--r--@   1 drmikeh  staff     0 Oct 25 18:36 abc.md
+ 0 -rw-r--r--@   1 drmikeh  staff     0 Oct 25 19:02 abc.md
  4 -rw-r--r--@   1 drmikeh  staff  1070 Sep 21 12:57 about-templates.md
- 8 -rwxr--r--@   1 drmikeh  staff  5700 Oct 25 18:36 md-process
+ 8 -rwxr--r--@   1 drmikeh  staff  5704 Oct 25 19:00 md-process
  4 -rw-r--r--@   1 drmikeh  staff  1633 Sep 21 13:11 readme-template.md
  4 -rw-r--r--@   1 drmikeh  staff  3976 Oct 25 18:36 readme.md
  0 drwxr-xr-x@   6 drmikeh  staff   204 Sep 22 08:45 src
