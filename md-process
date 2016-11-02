@@ -26,9 +26,10 @@ let TemplateProcessor = (function() {
         let link = guts
         .toLowerCase()
         .replace(/\s/g, '-')
-        .replace(/,|_|!|\/|\`|\'|\.|\*|\(|\)/g, '');
+        .replace(/,|_|!|\/|\`|\'|\.|\*|\(|\)|:|\?/g, '');
+        let tocItem = guts.replace(/\(.*\)/g, '').trim();
         let indent = '  '.repeat(level-2);  // indent nested toc lines
-        return indent + '* [' + guts + '](#' + link + ')';
+        return indent + '* [' + tocItem + '](#' + link + ')';
       });
 
       toc.unshift('## Table of Contents\n');
@@ -153,15 +154,15 @@ class Options {
 
 let cwd = process.cwd();
 let clArgs = process.argv;
-console.log('clArgs:', clArgs);
+// console.log('clArgs:', clArgs);
 clArgs.splice(0, 2);
-console.log('clArgs:', clArgs);
+// console.log('clArgs:', clArgs);
 if (clArgs.length > 0) {
   let options = new Options(clArgs);
   new TemplateProcessor(options.inputFile, options.outputFile, cwd).process();
 }
 else {
-  console.log('no options found.');
+  // console.log('no options found.');
   let regex = new RegExp(".*-template.md");
   let templateFiles = fs.readdirSync(cwd).filter(f => regex.test(f));
   console.log('templateFiles:', templateFiles);
