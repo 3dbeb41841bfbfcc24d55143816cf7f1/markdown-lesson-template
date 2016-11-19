@@ -26,7 +26,7 @@ let TemplateProcessor = (function() {
         let link = guts
         .toLowerCase()
         .replace(/\s/g, '-')
-        .replace(/,|_|!|\/|\`|\'|\.|\*|\(|\)|:|\?/g, '');
+        .replace(/,|_|!|\/|\`|\'|\.|\*|\(|\)|#|:|\?/g, '');
         let tocItem = guts.replace(/\(.*\)/g, '').trim();
         let indent = '  '.repeat(level-2);  // indent nested toc lines
         return indent + '* [' + tocItem + '](#' + link + ')';
