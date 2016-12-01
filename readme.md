@@ -28,7 +28,7 @@ This is just a sample lesson demonstrating the use of a template to generate thi
   * [JavaScript Does Server Too!](#javascript-does-server-too)
 * [Ruby Rocks!](#ruby-rocks)
 * [Markdown Has Task Lists](#markdown-has-task-lists)
-  * [A Level 3 Heading, *With* A __FUNKY__ (Name)](#a-level-3-heading-with-a-funky-name)
+  * [A Level 3 Heading, *With* A __FUNKY__](#a-level-3-heading-with-a-funky-name)
 * [Summary](#summary)
 * [For Further Study](#for-further-study)
 
@@ -56,15 +56,15 @@ Here is the output of running `ls -als`:
 
 ```
 total 28
- 0 drwxr-xr-x@  11 drmikeh  staff   374 Oct 25 18:18 .
- 0 drwxr-xr-x@ 133 drmikeh  staff  4522 Oct 24 13:07 ..
- 0 drwxr-xr-x@  12 drmikeh  staff   408 Oct 25 19:02 .git
+ 0 drwxr-xr-x@  11 drmikeh  staff   374 Nov  9 09:13 .
+ 0 drwxr-xr-x@ 137 drmikeh  staff  4658 Nov 29 12:32 ..
+ 0 drwxr-xr-x@  14 drmikeh  staff   476 Dec  1 14:40 .git
  4 -rw-r--r--@   1 drmikeh  staff    16 Oct 25 18:12 abc-template.md
- 0 -rw-r--r--@   1 drmikeh  staff     0 Oct 25 19:02 abc.md
+ 0 -rw-r--r--@   1 drmikeh  staff     0 Dec  1 14:40 abc.md
  4 -rw-r--r--@   1 drmikeh  staff  1070 Sep 21 12:57 about-templates.md
- 8 -rwxr--r--@   1 drmikeh  staff  5704 Oct 25 19:00 md-process
+ 8 -rwxr--r--@   1 drmikeh  staff  5781 Nov  9 09:13 md-process
  4 -rw-r--r--@   1 drmikeh  staff  1633 Sep 21 13:11 readme-template.md
- 4 -rw-r--r--@   1 drmikeh  staff  3976 Oct 25 18:36 readme.md
+ 4 -rw-r--r--@   1 drmikeh  staff  3973 Dec  1 12:47 readme.md
  0 drwxr-xr-x@   6 drmikeh  staff   204 Sep 22 08:45 src
  4 -rw-r--r--@   1 drmikeh  staff    93 Sep 20 14:31 todos.md
 ```
