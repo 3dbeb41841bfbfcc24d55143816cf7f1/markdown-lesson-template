@@ -55,16 +55,19 @@ Markdown is fun but what I really love is Markdown templates!
 Here is the output of running `ls -als`:
 
 ```
-total 28
- 0 drwxr-xr-x@  11 drmikeh  staff   374 Nov  9 09:13 .
+total 44
+ 0 drwxr-xr-x@  14 drmikeh  staff   476 Dec  2 10:18 .
  0 drwxr-xr-x@ 137 drmikeh  staff  4658 Nov 29 12:32 ..
- 0 drwxr-xr-x@  14 drmikeh  staff   476 Dec  1 14:40 .git
- 4 -rw-r--r--@   1 drmikeh  staff    16 Oct 25 18:12 abc-template.md
- 0 -rw-r--r--@   1 drmikeh  staff     0 Dec  1 14:40 abc.md
+ 0 drwxr-xr-x@  14 drmikeh  staff   476 Dec  2 15:00 .git
  4 -rw-r--r--@   1 drmikeh  staff  1070 Sep 21 12:57 about-templates.md
+ 4 -rwxr--r--    1 drmikeh  staff  2392 Dec  2 10:17 md-init
  8 -rwxr--r--@   1 drmikeh  staff  5781 Nov  9 09:13 md-process
+ 4 -rw-r--r--    1 drmikeh  staff  1425 Dec  2 09:55 proto-lesson-template.md
+ 0 -rw-r--r--    1 drmikeh  staff     0 Dec  2 15:00 proto-lesson.md
  4 -rw-r--r--@   1 drmikeh  staff  1633 Sep 21 13:11 readme-template.md
- 4 -rw-r--r--@   1 drmikeh  staff  3973 Dec  1 12:47 readme.md
+ 8 -rw-r--r--@   1 drmikeh  staff  4131 Dec  2 10:18 readme.md
+ 4 -rw-r--r--    1 drmikeh  staff  1489 Dec  2 15:00 sample-lesson-template.md
+ 4 -rw-r--r--    1 drmikeh  staff  2196 Dec  2 10:18 sample-lesson.md
  0 drwxr-xr-x@   6 drmikeh  staff   204 Sep 22 08:45 src
  4 -rw-r--r--@   1 drmikeh  staff    93 Sep 20 14:31 todos.md
 ```
