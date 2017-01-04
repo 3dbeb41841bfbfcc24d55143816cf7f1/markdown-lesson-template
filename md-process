@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-let fs = require("fs");
-let path = require("path");
+const fs = require("fs");
+const path = require("path");
 
 // Use an IIFE to hide the Implementation methods
-let TemplateProcessor = (function() {
+const TemplateProcessor = (function() {
 
   // The private Implementation class
   class TemplateProcessorImpl {
@@ -17,18 +17,18 @@ let TemplateProcessor = (function() {
       * for each header of level 2 or greater (lines starting with '##')
     **/
     _makeTOC() {
-      let headerPattern = /##.*/g  // include headers at level 2 and up
-      let tocHeaders = this.content.match(headerPattern);
-      let toc = tocHeaders.map( h => {
+      const headerPattern = /##.*/g  // include headers at level 2 and up
+      const tocHeaders = this.content.match(headerPattern);
+      const toc = tocHeaders.map( h => {
         let level = 0;
         while(h[++level] === '#');
-        let guts = h.substring(level).trim();
-        let link = guts
+        const guts = h.substring(level).trim();
+        const link = guts
         .toLowerCase()
         .replace(/\s/g, '-')
         .replace(/,|_|!|\/|\`|\'|\.|\*|\(|\)|#|:|\?/g, '');
-        let tocItem = guts.replace(/\(.*\)/g, '').trim();
-        let indent = '  '.repeat(level-2);  // indent nested toc lines
+        const tocItem = guts.replace(/\(.*\)/g, '').trim();
+        const indent = '  '.repeat(level-2);  // indent nested toc lines
         return indent + '* [' + tocItem + '](#' + link + ')';
       });
 
@@ -57,7 +57,7 @@ let TemplateProcessor = (function() {
      **/
     doTransclusions() {
       // regex for capturing {{path/file.js}}
-      let regex = new RegExp("\\{\\{([^:\\}]+)\\}\\}", "g");
+      const regex = new RegExp("\\{\\{([^:\\}]+)\\}\\}", "g");
 
       this.content = this.content
       .replace(regex, embeddedExpression => {
@@ -69,8 +69,8 @@ let TemplateProcessor = (function() {
         else if (embeddedExpression.startsWith('exec(')) {
           let args = embeddedExpression.substring(5).replace(/\)/g, '').split(',');
           args = args.map( arg => arg.trim() );
-          let command = args.shift();
-          let output = this._generateOutputFromCommand(command, args);
+          const command = args.shift();
+          const output = this._generateOutputFromCommand(command, args);
           console.log(`  Transcluding output of '%s'`, embeddedExpression);
           return output;
         }
@@ -140,7 +140,7 @@ class Options {
 
   _processCommandLineArgs(clArgs) {
     for (let index = 0; index < clArgs.length; index++) {
-      let val = clArgs[index];
+      const val = clArgs[index];
       switch(val) {
         case '-i': this.inputFile  = this._getSafeValue(this.inputFile,  clArgs[++index]); break;
         case '-o': this.outputFile = this._getSafeValue(this.outputFile, clArgs[++index]); break;
@@ -152,22 +152,22 @@ class Options {
   }
 }
 
-let cwd = process.cwd();
-let clArgs = process.argv;
+const cwd = process.cwd();
+const clArgs = process.argv;
 // console.log('clArgs:', clArgs);
 clArgs.splice(0, 2);
 // console.log('clArgs:', clArgs);
 if (clArgs.length > 0) {
-  let options = new Options(clArgs);
+  const options = new Options(clArgs);
   new TemplateProcessor(options.inputFile, options.outputFile, cwd).process();
 }
 else {
   // console.log('no options found.');
-  let regex = new RegExp(".*-template.md");
-  let templateFiles = fs.readdirSync(cwd).filter(f => regex.test(f));
+  const regex = new RegExp(".*-template.md");
+  const templateFiles = fs.readdirSync(cwd).filter(f => regex.test(f));
   console.log('templateFiles:', templateFiles);
   templateFiles.forEach( inputFile => {
-    let outputFile = inputFile.replace(/-template.md/, '.md');
+    const outputFile = inputFile.replace(/-template.md/, '.md');
     new TemplateProcessor(inputFile, outputFile, cwd).process();
   });
 }

@@ -51,13 +51,13 @@ Here is the output of running `echo apple orange banana`:
 Here is the source code for `src/greeting.js`:
 
 ```javascript
-{{ src/greeting.js }}
+{{ ../src/greeting.js }}
 ```
 
 And the output is:
 
 ```
-{{ exec(node, src/greeting.js) }}
+{{ exec(node, ../src/greeting.js) }}
 ```
 
 ### JavaScript Does Server Too!
@@ -66,7 +66,7 @@ And the output is:
   <summary><strong>Here is the source code for `src/express-app.js`</strong></summary>
 
 ```javascript
-{{ src/express-app.js }}
+{{ ../src/express-app.js }}
 ```
 </details>
 
@@ -77,13 +77,13 @@ And the output is:
 Here is the source code for `src/pet.rb`:
 
 ```ruby
-{{ src/pet.rb}}
+{{ ../src/pet.rb}}
 ```
 
 And the output is:
 
 ```
-{{ exec(ruby, src/pet.rb) }}
+{{ exec(ruby, ../src/pet.rb) }}
 ```
 
 ---
